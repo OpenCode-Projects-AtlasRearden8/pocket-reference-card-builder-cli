@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pocket-reference-cards"
+version = "0.1.0"
+description = "Compile small Markdown chunks into printable 3x5 index-card PDFs for pocket reference (duplex-safe, shake-top banners)."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { file = "LICENSE" }
+authors = [{ name = "Asdale Dynamics, LLC" }]
+dependencies = ["reportlab>=3.6"]
+
+[project.scripts]
+pocket-cards = "pocket_reference_cards.cli:main"
+
+[tool.setuptools]
+packages = ["pocket_reference_cards"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
